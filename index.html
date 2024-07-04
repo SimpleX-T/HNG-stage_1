@@ -3,8 +3,86 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
+		<title>My 2-Year Tech Goals</title>
 		<link rel="stylesheet" href="style.css" />
-		<title>Mark Tochukwu</title>
 	</head>
-	<body></body>
+
+	<body class="dark">
+		<header>
+			<h1>My 2-Year Tech Goals</h1>
+		</header>
+		<main>
+			<section id="profile">
+				<img
+					src="slackdisplaypicture.jpg"
+					alt="Slack Profile Picture"
+					data-testid="slackProfilePicture"
+					width="200px" />
+				<h2>Profile Information</h2>
+				<p>
+					Name:
+					<span data-testid="slackDisplayName">Tochukwu 1️⃣</span>
+				</p>
+				<p>
+					Email:
+					<span data-testid="slackEmail">ntmark2004@gmail.com</span>
+				</p>
+			</section>
+
+			<section id="current-info">
+				<h2>Current Information</h2>
+				<p>
+					Current UTC Time: <span data-testid="currentTimeUTC"></span>
+				</p>
+				<p>Current Day: <span data-testid="currentDay"></span></p>
+			</section>
+
+			<section id="goals">
+				<h2>My Tech Goals for the Next 2 Years</h2>
+				<ul>
+					<li>Master full-stack web development</li>
+					<li>Contribute to open-source projects</li>
+					<li>Learn web3 and Blockchain concepts</li>
+					<li>Develop a personal project showcasing my skills</li>
+					<li>Attend tech conferences and networking events</li>
+				</ul>
+			</section>
+
+			<section id="links">
+				<h2>Useful Links</h2>
+				<a
+					href="https://hng.tech/learn"
+					data-testid="hngLink"
+					target="_blank"
+					rel="noopener noreferrer"
+					>HNG Learn</a
+				>
+				<a
+					href="https://keyword.dog"
+					data-testid="keywordLink"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Keyword Dog</a
+				>
+				<a
+					href="https://scrapeanyweb.site"
+					data-testid="scrapeanywebLink"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Scrape Any Web</a
+				>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2024 Tochukwu All rights reserved.</p>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
 </html>
