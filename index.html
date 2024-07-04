@@ -22,7 +22,8 @@
 					src="slackdisplaypicture.jpg"
 					alt="Slack Profile Picture"
 					data-testid="slackProfilePicture"
-					width="200px" />
+					width="200px"
+					title="Click to toggle light mode" />
 				<h2>Profile Information</h2>
 				<p>
 					Name:
@@ -37,9 +38,13 @@
 			<section id="current-info">
 				<h2>Current Information</h2>
 				<p>
-					Current UTC Time: <span data-testid="currentTimeUTC"></span>
+					Current UTC Time:
+					<span data-testid="currentTimeUTC" id="timeDisplay"></span>
 				</p>
-				<p>Current Day: <span data-testid="currentDay"></span></p>
+				<p>
+					Current Day:
+					<span data-testid="currentDay" id="dateDisplay"></span>
+				</p>
 			</section>
 
 			<section id="goals">
@@ -83,6 +88,6 @@
 			<p>&copy; 2024 Tochukwu All rights reserved.</p>
 		</footer>
 
-		<script src="script.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>

@@ -1,60 +1,40 @@
-const date = new Date();
+const dateDisplayEl = document.getElementById("dateDisplay"),
+	timeDisplayEl = document.getElementById("timeDisplay");
 
-function updateCurrentInfo() {
-	const timeElement = document.querySelector(
-		'[data-testid="currentTimeUTC"]'
-	);
-	timeElement.textContent = date.toUTCString();
+const months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+];
 
-	const days = [
-		"Sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
-	];
-	const dayElement = document.querySelector('[data-testid="currentDay"]');
-	dayElement.textContent = days[date.getDay()];
+function displayDateAndTime() {
+	setInterval(() => {
+		const date = new Date();
+		const curHour = date.getUTCHours(),
+			curMin = date.getUTCMinutes(),
+			curSec = date.getUTCSeconds(),
+			curDay = date.getUTCDay(),
+			curMonth = date.getUTCMonth(),
+			curYear = date.getUTCFullYear();
+
+		const curTime = `${curHour < 10 ? "0" : ""}${curHour} : ${
+			curMin < 10 ? "0" : ""
+		}${curMin} : ${curSec < 10 ? "0" : ""}${curSec}`;
+
+		const curDate = `${curDay} ${months[curMonth - 1]}, ${curYear}`;
+
+		timeDisplayEl.textContent = curTime;
+		dateDisplayEl.textContent = curDate;
+	}, 1000);
 }
 
-function setProfileInfo() {
-	document.querySelector('[data-testid="slackDisplayName"]').textContent =
-		"tochukwu";
-
-	// Replace with your actual Slack email
-	document.querySelector('[data-testid="slackEmail"]').textContent =
-		"your.email@example.com";
-}
-
-// Function to set profile picture
-function setProfilePicture() {
-	const img = document.querySelector('[data-testid="slackProfilePicture"]');
-	img.src = "slackdisplaypicture.jpg";
-	img.alt = "My Profile Picture";
-
-	// Ensure image has natural dimensions
-	img.onload = function () {
-		if (this.naturalWidth && this.naturalHeight) {
-			console.log("Image has natural dimensions");
-		} else {
-			console.error("Image does not have natural dimensions");
-		}
-	};
-}
-
-// Update time every second
-setInterval(updateCurrentInfo, 1000);
-
-// Initialize page
-function initPage() {
-	updateCurrentInfo();
-	setProfileInfo();
-	setProfilePicture();
-
-	document.getElementById("curYear").textContent = date.getFullYear();
-}
-
-// Call initPage when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", initPage);
+displayDateAndTime();

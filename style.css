@@ -11,20 +11,23 @@ html {
 }
 
 :root {
-	--bg-dark: #0d1b2a;
-	--bg-light: #e0e1dd;
-	--text-dark: var(--bg-light);
-	--text-light: var(--bg-dark);
 	--shade-0: #1b263b;
 	--shade-1: #415a77;
 	--shade-2: #778da9;
 }
 
+body {
+	--text: #0d1b2a;
+	--bg: #e0e1dd;
+}
+
 body.dark {
+	--bg: #0d1b2a;
+	--text: #e0e1dd;
 	font-family: "Montserrat", sans-serif;
 	line-height: 1.6;
-	color: var(--text-dark);
-	background: var(--bg-dark);
+	color: var(--text);
+	background: var(--bg);
 	margin: 0;
 	padding: 20px;
 }
@@ -101,7 +104,7 @@ section {
 footer {
 	text-align: center;
 	margin-top: 30px;
-	color: var(--shade-1);
+	color: var(--text);
 }
 
 @media (max-width: 1199.98px) {
