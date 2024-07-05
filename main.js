@@ -1,5 +1,6 @@
 const dateDisplayEl = document.getElementById("dateDisplay"),
-	timeDisplayEl = document.getElementById("timeDisplay");
+	timeDisplayEl = document.getElementById("timeDisplay"),
+	toggleEl = document.getElementById("toggle").querySelector("input");
 
 const months = [
 	"January",
@@ -38,3 +39,15 @@ function displayDateAndTime() {
 }
 
 displayDateAndTime();
+
+function handleToggle() {
+	const isChecked = toggleEl.checked;
+
+	if (isChecked) {
+		document.body.classList.remove("dark");
+	} else {
+		document.body.classList.add("dark");
+	}
+}
+
+toggleEl.addEventListener("change", handleToggle);
